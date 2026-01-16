@@ -238,30 +238,53 @@ a{
 
 /* iPhone Optimierungen */
 @media only screen and (max-width: 428px) {
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     h1 {
         font-size: 1.5rem;
-        margin: 2rem 1rem 0;
+        margin: 2rem 1rem 1rem;
         text-align: center;
+        position: relative;
+        top: 0;
     }
 
     .red {
         font-size: 2rem;
+        display: inline-block;
     }
 
     img {
-        height: 300px;
+        height: 250px;
         max-width: 90%;
         object-fit: contain;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        display: block;
     }
 
     .buttons {
-        margin-top: 20rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 2rem 1rem;
         gap: 2rem;
-        flex-wrap: wrap;
-        padding: 1rem;
+        flex-wrap: nowrap;
+        top: auto;
     }
 
     .btn {
+        position: relative;
+        top: 0;
         min-width: 100px;
         font-size: 1rem;
         padding: 0.75rem 1.5rem;
@@ -278,7 +301,7 @@ a{
 @media only screen and (max-width: 375px) {
     h1 {
         font-size: 1.2rem;
-        margin: 1.5rem 0.5rem 0;
+        margin: 1.5rem 0.5rem 0.5rem;
     }
 
     .red {
@@ -286,12 +309,12 @@ a{
     }
 
     img {
-        height: 250px;
+        height: 200px;
     }
 
     .buttons {
-        margin-top: 18rem;
         gap: 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .btn {
