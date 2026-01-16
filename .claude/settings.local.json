@@ -6,7 +6,9 @@
       "Bash(xcopy:*)",
       "Bash(robocopy temp-repo . /E /MOVE)",
       "Bash(find:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nValentine''s Day Website auf Deutsch mit E-Mail-Benachrichtigung\n\n- Alle Inhalte ins Deutsche übersetzt\n- iPhone-optimiertes Design\n- Modernes Styling mit Gradients und Animationen\n- Valentinstag-Frage als Hauptfokus\n- E-Mail-Benachrichtigung bei \"Ja\"\n- Nein-Button wächst bei Klicks\n- Bereit für GitHub Pages\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(gh repo create:*)"
     ]
   }
 }
