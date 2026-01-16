@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,36 +16,36 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 2rem;
     z-index: 10;
 }
 
 img {
-    max-width: 300px;
+    max-width: 250px;
     width: 100%;
     height: auto;
-    z-index: 1000;
+    border-radius: 10px;
 }
 
 h1 {
     color: aliceblue;
+    font-size: 1.8rem;
+    font-weight: 600;
     text-align: center;
-    font-size: 1.5em;
-    z-index: 1000;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     font-family: "Love Ya Like A Sister", cursive;
-    font-weight: 400;
-    font-style: normal;
+    line-height: 1.4;
 }
 
 .heart {
     position: absolute;
     width: 40px;
     height: 40px;
-    background: #e80202;
+    background: #ff1744;
     transform: rotate(45deg);
     box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
 }
@@ -57,7 +57,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #e80202;
+    background: #ff1744;
     border-radius: 50%;
     box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
 }
@@ -69,59 +69,39 @@ h1 {
     left: -50%;
     width: 100%;
     height: 100%;
-    background: #e80202;
+    background: #ff1744;
     border-radius: 50%;
     box-shadow: -20px 0 40px rgba(0, 0, 0, 0.1);
-}
-
-.watermark {
-    opacity: 0.5;
-    color: BLACK;
-    position: fixed;
-    top: 95%;
-    left: 45%;
-}
-
-a {
-    text-decoration: none;
-    color: black;
 }
 
 /* iPhone Optimierungen */
 @media only screen and (max-width: 428px) {
     .container {
         padding: 1rem;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     img {
-        max-width: 60%;
-        max-height: 30vh;
-        height: auto;
+        max-width: 70%;
+        max-height: 35vh;
         object-fit: contain;
     }
 
     h1 {
-        font-size: 1em;
+        font-size: 1.1rem;
         padding: 0 1rem;
         line-height: 1.3;
-    }
-
-    .watermark {
-        font-size: 0.8rem;
-        left: 50%;
-        transform: translateX(-50%);
     }
 }
 
 /* Sehr kleine iPhones */
 @media only screen and (max-width: 375px) {
-    h1 {
-        font-size: 0.9em;
+    img {
+        max-width: 65%;
+        max-height: 30vh;
     }
 
-    img {
-        max-width: 55%;
-        max-height: 25vh;
+    h1 {
+        font-size: 1rem;
     }
 }
