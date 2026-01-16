@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone:*)",
+      "Bash(dir:*)",
+      "Bash(xcopy:*)",
+      "Bash(robocopy temp-repo . /E /MOVE)",
+      "Bash(find:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

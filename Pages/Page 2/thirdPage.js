@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("disable").style.display = "none";
   }
 
-  // Function to navigate to the second page
+  // Function to navigate to the Valentine's Day question
   function navigateToSecondPage() {
-    window.location.href = "../Page 3/forthPage.html";
+    window.location.href = "../Page 4/ask.html";
   }
 
   // Call the showClickableButton function after 3 seconds

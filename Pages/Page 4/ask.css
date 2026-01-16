@@ -1,14 +1,26 @@
 body {
-	/* background: #111; */
-    /* background-image: linear-gradient(to right bottom, #ff009e, #ff819f, #fea0ff,
-     #ffb2d7, #cbb2ff); */
-    /* background-image: linear-gradient(0.25turn,  #b30f15, #96090f, #f0a1a0, #850606,
-    #63080c); */
-    /* background-image: linear-gradient(0.25turn, #390035, #741838, #681740, #421034,
-    #23020a); */
-    background: #111;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 	height: 100vh;
     overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(138, 43, 226, 0.2) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
 }
 
 .wrapper span {
@@ -102,18 +114,28 @@ body {
 	}
 }
 
-h1{  
+h1{
     margin: 5rem 0 0;
     padding-bottom: 0;
     display: flex;
     justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    position: relative;
 }
 
 .red{
-    color: rgb(237, 37, 37);
+    background: linear-gradient(135deg, #ff0080 0%, #ff8c00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 3rem;
+    font-weight: 900;
+    filter: drop-shadow(0 2px 10px rgba(255, 0, 128, 0.5));
 }
 
 /* .content {
@@ -144,29 +166,49 @@ img{
     display: inline-block;
     position: relative;
     top: calc(100% - 10rem);
-    min-width: 120px;
+    min-width: 140px;
     margin: 4px 2px;
+    padding: 1rem 2rem;
     font-size: 1.25rem;
+    font-weight: 600;
     outline: none;
     border: none;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     color: #fff;
-    background-color: rgb(245, 116, 142);
+    z-index: 100;
+}
+
+#yes {
+    background: linear-gradient(135deg, #ff0080 0%, #ff8c00 100%);
+}
+
+#yes:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 0, 128, 0.5);
 }
 
 #yes:hover span {
     display:none
 }
-  
-#yes:hover:before {   
-    content:"I know 💖";
+
+#yes:hover:before {
+    content:"Ich weiß 💖";
+}
+
+#no {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#no:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(118, 75, 162, 0.5);
 }
 
 body.yess {
-    background-image: linear-gradient(0.25turn, #390035, #741838, #681740, #421034, #23020a);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
 #no:hover span {
@@ -174,11 +216,11 @@ body.yess {
 }
 
 #no:hover:before {
-    content:"Please 🥺";
+    content:"Bitte 🥺";
 }
 
 body.noo {
-    background-image: linear-gradient(0.25turn, #1d1919, #453b3b, #7d6b6b, #635a5a, #000000);
+    background: linear-gradient(135deg, #434343 0%, #000000 100%);
 }
 
 .watermark {
@@ -192,4 +234,69 @@ body.noo {
 a{
     text-decoration: none;
     color: rgb(243, 214, 214);
+}
+
+/* iPhone Optimierungen */
+@media only screen and (max-width: 428px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 2rem 1rem 0;
+        text-align: center;
+    }
+
+    .red {
+        font-size: 2rem;
+    }
+
+    img {
+        height: 300px;
+        max-width: 90%;
+        object-fit: contain;
+    }
+
+    .buttons {
+        margin-top: 20rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .btn {
+        min-width: 100px;
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .watermark {
+        font-size: 0.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Spezielle Anpassungen für sehr kleine iPhones (SE, etc.) */
+@media only screen and (max-width: 375px) {
+    h1 {
+        font-size: 1.2rem;
+        margin: 1.5rem 0.5rem 0;
+    }
+
+    .red {
+        font-size: 1.5rem;
+    }
+
+    img {
+        height: 250px;
+    }
+
+    .buttons {
+        margin-top: 18rem;
+        gap: 1.5rem;
+    }
+
+    .btn {
+        min-width: 90px;
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
 }

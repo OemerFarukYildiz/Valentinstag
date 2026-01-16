@@ -26,3 +26,21 @@ function animateHearts() {
 }
 
 animateHearts();
+
+// E-Mail Benachrichtigung senden
+(function() {
+  emailjs.init('s-_UyjGmfRGMXir4q');
+
+  const templateParams = {
+    to_email: 'yildiz-faruk@hotmail.com',
+    message: 'Sie hat JA gesagt! 💕',
+    date: new Date().toLocaleString('de-DE')
+  };
+
+  emailjs.send('service_7bsxupt', 'template_z9e9zl8', templateParams)
+    .then(function(response) {
+      console.log('E-Mail erfolgreich gesendet!', response.status, response.text);
+    }, function(error) {
+      console.log('Fehler beim E-Mail-Versand:', error);
+    });
+})();

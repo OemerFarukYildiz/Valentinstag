@@ -79,3 +79,39 @@ a{
     text-decoration: none;
     color: black;
 }
+
+/* iPhone Optimierungen */
+@media only screen and (max-width: 428px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    img {
+        max-width: 80%;
+        height: auto;
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 0 1rem;
+    }
+
+    .watermark {
+        font-size: 0.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    img {
+        max-width: 70%;
+    }
+}
